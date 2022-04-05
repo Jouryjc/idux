@@ -1,3 +1,5 @@
+import { vi } from 'vitest'
+
 import { addClass, hasClass, off, on, removeClass } from '../src/dom'
 
 describe('dom.ts', () => {
@@ -8,7 +10,7 @@ describe('dom.ts', () => {
   })
 
   test('event listener', () => {
-    const listener = jest.fn()
+    const listener = vi.fn()
     on(testElement, 'click', listener)
     testElement.click()
 
